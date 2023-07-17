@@ -15,7 +15,6 @@ public class AccountAuthenticationProvider extends AbstractUserDetailsAuthentica
     final JwtUserDetailsService userDetailsService;
     final PasswordEncoder passwordEncoder;
 
-
     @Override
     protected void additionalAuthenticationChecks(UserDetails userDetails, UsernamePasswordAuthenticationToken authentication) throws AuthenticationException {
         if (authentication.getCredentials() == null || userDetails.getPassword() == null) {

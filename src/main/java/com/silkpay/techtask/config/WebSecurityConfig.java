@@ -18,10 +18,6 @@ public class WebSecurityConfig {
     final AccountAuthenticationProvider authenticationProvider;
     final JwtFilter jwtFilter;
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return NoOpPasswordEncoder.getInstance();
-    }
 
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {

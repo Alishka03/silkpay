@@ -10,13 +10,13 @@ password:sa<br>
 }
 <br>
 После этого: <code>http://localhost:8080/auth/sign-in</code> для того чтобы войти в систему.POST : Body->raw_>JSON:<br>
-{
+<code>{
    "username":"username",
    "password":"password"
 }
+</code>
 Получите такой ответ:<br>
-<code>
-{
+<code>{
     "status": "SUCCESS",
     "id": 4,
     "username": "username",

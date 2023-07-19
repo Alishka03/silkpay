@@ -14,3 +14,13 @@ password:sa<br>
    "username":"username",
    "password":"password"
 }
+Получите такой ответ:<br>
+<code>
+{
+    "status": "SUCCESS",
+    "id": 4,
+    "username": "username",
+    "tokenType": "Bearer",
+    "accessToken": "some token"
+}
+</code><br>Копируйте accessToken для того чтобы аутенифицироваться в дальшейших действиях:Authorization->Bearer 

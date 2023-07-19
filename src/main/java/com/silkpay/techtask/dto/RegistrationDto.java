@@ -7,6 +7,10 @@ public class RegistrationDto {
         this.username = username;
         this.password = password;
     }
+
+    public RegistrationDto() {
+    }
+
     public String getUsername() {
         return username;
     }

@@ -1,5 +1,7 @@
 package com.silkpay.techtask.pojo;
 
+import java.util.Objects;
+
 public class JwtResponse {
     private String status;
     private String token;
@@ -22,6 +24,23 @@ public class JwtResponse {
         this.id = id;
         this.username = username;
     }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     public String getStatus() {
         return status;
     }
@@ -61,5 +80,20 @@ public class JwtResponse {
     public void setUsername(String username) {
         this.username = username;
     }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        JwtResponse that = (JwtResponse) o;
+        return Objects.equals(status, that.status) &&
+                Objects.equals(token, that.token) &&
+                Objects.equals(id, that.id) &&
+                Objects.equals(username, that.username);
+    }
 
+    // Implement the hashCode() method
+    @Override
+    public int hashCode() {
+        return Objects.hash(status, token, id, username);
+    }
 }

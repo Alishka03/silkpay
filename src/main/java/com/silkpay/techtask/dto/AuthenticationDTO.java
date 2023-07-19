@@ -4,6 +4,10 @@ public class AuthenticationDTO {
     private String username;
     private String password;
 
+    public AuthenticationDTO() {
+
+    }
+
     public String getUsername() {
         return username;
     }

@@ -42,10 +42,12 @@ public class AccountService {
         User user = userService.getAuthenticatedUser();
         account.setUser(user);
         user.getAccounts().add(account);
-        return accountRepository.save(account);
+
+        Account acc =  accountRepository.save(account);
+        return acc;
     }
     public void transferMoney(Long senderAccountId, Long receiverAccountId, BigDecimal amount) {
-        Account senderAccount = accountRepository.findById(senderAccountId).orElseThrow(() -> new ApiRequestException("Sender account not found"));
+        Account senderAccount = accountRepository.findById(senderAccountId).orElseThrow(() -> new EntityNotFoundException("Sender account not found"));
         Account receiverAccount = accountRepository.findById(receiverAccountId).orElseThrow(() -> new ApiRequestException("Receiver account not found"));
 
         if (senderAccount.getBalance().compareTo(amount) < 0) {

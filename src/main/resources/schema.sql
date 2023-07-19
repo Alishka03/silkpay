@@ -1,5 +1,6 @@
-drop table if exists account;
 drop table if exists transaction;
+drop table if exists account;
+
 drop table if exists users;
 
 
@@ -26,3 +27,4 @@ CREATE TABLE transaction
     FOREIGN KEY (sender_account_id) REFERENCES account (id) ,
     FOREIGN KEY (receiver_account_id) REFERENCES account (id)
 );
+

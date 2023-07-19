@@ -12,7 +12,6 @@ import java.util.Optional;
 @Service
 public class JwtUserDetailsService implements UserDetailsService {
     private final UserRepository userRepository;
-
     public JwtUserDetailsService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }

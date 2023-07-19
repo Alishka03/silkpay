@@ -18,11 +18,8 @@ import java.io.IOException;
 @Component
 @RequiredArgsConstructor
 public class JwtFilter extends OncePerRequestFilter {
-    @Autowired
     final JwtUtil jwtUtil;
-    @Autowired
     final JwtUserDetailsService userDetailsService;
-
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
@@ -32,6 +29,7 @@ public class JwtFilter extends OncePerRequestFilter {
 
             if (jwt.isBlank()) {
                 response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid JWT Token in Bearer Header");
+                System.out.println("INVALID header");
             } else {
                 try {
                     String username = jwtUtil.validateTokenAndRetrieveClaim(jwt);
@@ -43,6 +41,7 @@ public class JwtFilter extends OncePerRequestFilter {
                         SecurityContextHolder.getContext().setAuthentication(authToken);
                     }
                 } catch (JWTVerificationException exc) {
+                    System.out.println("INVALID");
                     response.sendError(HttpServletResponse.SC_BAD_REQUEST, "invalid JWT Token");
                 }
             }

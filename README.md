@@ -23,4 +23,9 @@ password:sa<br>
     "tokenType": "Bearer",
     "accessToken": "some token"
 }
-</code><br>Копируйте accessToken для того чтобы аутенифицироваться в дальшейших действиях:Authorization->Bearer 
+</code><br>Копируйте accessToken для того чтобы аутенифицироваться в дальшейших действиях:Authorization->Bearer <br>
+<code>http://localhost:8080/my-accounts</code> - для того чтобы увидеть мои счета<br>
+<code>http://localhost:8080/new-account</code> - для того чтобы открыть новый счет вы должны указать начальный баланс : RequestBody: <code>{
+    "balance":"4000"
+}</code> 
+<code></code>

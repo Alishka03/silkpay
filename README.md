@@ -29,3 +29,5 @@ password:sa<br>
     "balance":"4000"
 }</code> <br>
 <code>http://localhost:8080/transfer?senderAccountId=4&receiverAccountId=3&amount=4000</code> для того чтобы перевести деньги со своего счета (POST)
+![image](https://github.com/Alishka03/silkpay/assets/90178590/72c35c9e-4732-420d-8c93-6fec5199d64d)
+

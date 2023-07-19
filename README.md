@@ -25,7 +25,7 @@ password:sa<br>
 }
 </code><br>Копируйте accessToken для того чтобы аутенифицироваться в дальшейших действиях:Authorization->Bearer <br>
 <code>http://localhost:8080/my-accounts</code> - для того чтобы увидеть мои счета<br>
-<code>http://localhost:8080/new-account</code> - для того чтобы открыть новый счет вы должны указать начальный баланс : RequestBody: <code>{
+<code>http://localhost:8080/new-account</code> - для того чтобы открыть новый счет вы должны указать начальный баланс : RequestBody: <br><code>{
     "balance":"4000"
 }</code> 
-<code></code>
+<code>http://localhost:8080/transfer?senderAccountId=4&receiverAccountId=3&amount=4000</code> для того чтобы перевести деньги со своего счета
